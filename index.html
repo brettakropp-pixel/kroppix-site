@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kroppix</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --text: #1d1d1b;
+      --muted: #6b675f;
+      --line: #d9d2c7;
+      --card: #efe9de;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: rgba(247, 244, 238, 0.96);
+      backdrop-filter: blur(6px);
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 56px 24px 88px;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: end;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 5vw, 4.6rem);
+      line-height: 0.96;
+      font-weight: 500;
+    }
+
+    .intro p {
+      margin: 0;
+      max-width: 38rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .note {
+      font-size: 0.95rem;
+      color: var(--muted);
+      border-left: 2px solid var(--line);
+      padding-left: 16px;
+    }
+
+    .hero-gallery {
+      padding-top: 44px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-gallery-header {
+      max-width: 44rem;
+      margin-bottom: 24px;
+    }
+
+    .hero-gallery-header h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 500;
+    }
+
+    .hero-gallery-header p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .hero-grid figure {
+      margin: 0;
+    }
+
+    .hero-grid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .sections {
+      padding-top: 44px;
+      display: grid;
+      gap: 28px;
+    }
+
+    .section-card {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      padding: 22px;
+      background: rgba(255,255,255,0.25);
+      border: 1px solid var(--line);
+    }
+
+    .section-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .section-card h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      font-weight: 500;
+    }
+
+    .section-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .about {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+    }
+
+    .about h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 36px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid,
+      .intro,
+      .section-card,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding-top: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#top">kroppix</a>
+      <nav>
+        <a href="japan.html">Japan</a>
+        <a href="#road">The Road</a>
+        <a href="#night-sky">Night Sky</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="intro">
+      <div>
+        <h1>A quiet record of places, light, and life lived.</h1>
+        <p>
+          This is a personal archive of photographs and notes gathered across Japan,
+          years on the road around Australia, and the beginning of a night sky chapter.
+        </p>
+      </div>
+      <div class="note">
+        Built simply, with room to grow. Start with a few images, a few words, the rest arrive over time.
+      </div>
+    </section>
+
+    <section class="hero-gallery">
+      <div class="hero-gallery-header">
+        <div class="meta">Selected work</div>
+        <h2>Nine favourites</h2>
+        <p>
+          A small, mixed gallery of photographs that sit closest to the centre of the project.
+          This can stay fluid and change over time.
+        </p>
+      </div>
+
+     <div class="hero-grid">
+
+  <figure>
+    <a href="images/favourites/aloe.jpg" target="_blank">
+      <img src="images/favourites/aloe.jpg" alt="Aloe detail" />
+    </a>
+  </figure>
+
+  <figure>
+    <a href="images/favourites/hastings-point.jpg" target="_blank">
+      <img src="images/favourites/hastings-point.jpg" alt="Hastings Point landscape" />
+    </a>
+  </figure>
+
+  <figure>
+    <a href="images/favourites/himeji-koi.jpg" target="_blank">
+      <img src="images/favourites/himeji-koi.jpg" alt="Koi at Himeji" />
+    </a>
+  </figure>
+
+  <figure>
+    <a href="images/favourites/kyoto-night.jpg" target="_blank">
+      <img src="images/favourites/kyoto-night.jpg" alt="Kyoto at night" />
+    </a>
+  </figure>
+
+  <figure>
+    <a href="images/favourites/minoh-momoji.jpg" target="_blank">
+      <img src="images/favourites/minoh-momoji.jpg" alt="Autumn colour at Minoh" />
+    </a>
+  </figure>
+
+  <figure>
+    <a href="images/favourites/minoh-temple.jpg" target="_blank">
+      <img src="images/favourites/minoh-temple.jpg" alt="Temple at Minoh" />
+    </a>
+  </figure>
+
+  <figure>
+    <a href="images/favourites/qld-willy-sunset.jpg" target="_blank">
+      <img src="images/favourites/qld-willy-sunset.jpg" alt="Willy wagtail at sunset in Queensland" />
+    </a>
+  </figure>
+
+  <figure>
+    <a href="images/favourites/sa-flinders-emi.jpg" target="_blank">
+      <img src="images/favourites/sa-flinders-emi.jpg" alt="Flinders landscape in South Australia" />
+    </a>
+  </figure>
+
+  <figure>
+    <a href="images/favourites/tas-cradle.jpg" target="_blank">
+      <img src="images/favourites/tas-cradle.jpg" alt="Cradle Mountain scene in Tasmania" />
+    </a>
+  </figure>
+
+</div>
+    </section>
+
+    <section class="sections">
+      <article class="section-card" id="japan">
+        <a href="japan.html">
+          <img src="images/japan/takayama-temple-roof.jpg" alt="Temple roofline in Takayama, Japan" />
+        </a>
+        <div>
+          <div class="meta">Chapter One</div>
+          <h2><a href="japan.html">Japan</a></h2>
+          <p>
+            Takayama. A roofline caught from below, where timber, shadow, and curve do most of the speaking.
+          </p>
+          <p>
+            Japan begins here for me: not with landmarks, but with the small precision of built forms and the quiet attention they reward.
+          </p>
+        </div>
+      </article>
+
+      <article class="section-card" id="road">
+        <img src="images/road/uluru-sunrise.jpg" alt="Moments from life on the road across Australia" />
+        <div>
+          <div class="meta">Chapter Two</div>
+          <h2>The Road</h2>
+          <p>
+            Three years moving through the country. Not always dramatic, but always lived.
+          </p>
+          <p>
+            The road wasn’t just landscapes — it was the in-between moments, the stops, the small fragments that make up what travel actually feels like.
+          </p>
+        </div>
+      </article>
+
+      <article class="section-card" id="night-sky">
+        <img src="images/night-sky/tasmania-southern-lights.jpg" alt="Southern Lights over Tasmania" />
+        <div>
+          <div class="meta">Chapter Three</div>
+          <h2>Night Sky</h2>
+          <p>
+            Tasmania. The first time the sky did something unexpected.
+          </p>
+          <p>
+            A quiet introduction to photographing light that doesn’t belong to the day.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="about" id="about">
+      <h3>About</h3>
+      <div>
+        <p>
+          kroppix is a personal photography project by Brett Kropp. It is not a portfolio in the commercial sense, but an evolving archive of photographs and reflections gathered over time.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    kroppix.com — a simple beginning.
+  </footer>
+</body>
+</html>

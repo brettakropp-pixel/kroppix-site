@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kroppix — Japan</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --text: #1d1d1b;
+      --muted: #6b675f;
+      --line: #d9d2c7;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: rgba(247, 244, 238, 0.96);
+      backdrop-filter: blur(6px);
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 40px 24px 88px;
+    }
+
+    .page-intro {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 40px;
+      align-items: start;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      line-height: 0.96;
+      font-weight: 500;
+    }
+
+    .page-intro p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 42rem;
+    }
+
+    .hero {
+      margin-top: 36px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 74vh;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .caption {
+      font-size: 0.94rem;
+      color: var(--muted);
+      max-width: 50rem;
+    }
+
+    .body-copy {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      margin-top: 46px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .body-copy p {
+      margin: 0 0 16px;
+    }
+
+    .sets {
+      margin-top: 54px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .sets h2 {
+      margin: 0 0 18px;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .sets-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .set-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .set-card h3 {
+      margin: 10px 0 4px;
+      font-weight: 500;
+    }
+
+    .set-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .gallery-preview {
+      margin-top: 54px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .gallery-preview h2 {
+      margin: 0 0 18px;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .gallery-grid figcaption {
+      margin-top: 8px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 36px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .page-intro,
+      .body-copy,
+      .sets-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid img {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">kroppix</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="japan.html">Japan</a>
+        <a href="road.html">The Road</a>
+        <a href="night-sky.html">Night Sky</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div>
+        <p class="eyebrow">Chapter One</p>
+        <h1>Japan</h1>
+      </div>
+      <div>
+        <p>
+          Japan sits at the centre of this archive. Not because it needs explaining, but because it keeps rewarding closer attention.
+        </p>
+        <p>
+          The photographs here are less about landmarks than about structure, atmosphere, and the way place is held in timber, shadow, roofline, stone, and ritual.
+        </p>
+      </div>
+    </section>
+
+    <section class="hero">
+      <img src="images/japan/takayama-temple-roof.jpg" alt="Temple roofline in Takayama, Japan" />
+      <div class="caption">
+        Takayama. A roofline caught from below, where timber, shadow, and curve do most of the speaking.
+      </div>
+    </section>
+
+    <section class="body-copy">
+      <div>
+        <p>
+          My interest in Japan has never really been about collecting famous places. It has more often been about the quiet precision of things that are easy to walk past: the lift of an eave, the depth of old timber, the way a building meets sky.
+        </p>
+        <p>
+          That attention became stronger over time. The more I returned, the less interested I became in the obvious frame and the more drawn I was to details that seemed to hold the character of a place in a smaller, more exact way.
+        </p>
+      </div>
+      <div>
+        <p>
+          This chapter will eventually include temples, sacred sites, mountain paths, ceremonies, and architecture photographed across different visits and different stages of life.
+        </p>
+        <p>
+          For now, it begins simply: one image, a few words, and enough room for the rest of the work to arrive properly.
+        </p>
+      </div>
+    </section>
+
+    <section class="sets">
+      <h2>Places</h2>
+
+      <div class="sets-grid">
+
+  <article class="set-card">
+    <a href="arashiyama.html">
+      <img src="images/japan/arashiyama/arashiyama-statue-01.jpg" alt="Arashiyama, Kyoto" />
+    </a>
+    <h3><a href="arashiyama.html">Arashiyama</a></h3>
+    <p>A single day moving between river, blossom, and the quieter edges of Kyoto.</p>
+  </article>
+
+  <article class="set-card">
+    <a href="tennoji.html">
+      <img src="images/japan/tennoji/tennoji-incence.jpg" alt="Tennoji, Osaka" />
+    </a>
+    <h3><a href="tennoji.html">Tennoji</a></h3>
+    <p>A slower walk through an older part of Osaka, where small rituals and everyday moments sit side by side.</p>
+  </article>
+
+</div>
+    </section>
+
+    <section class="gallery-preview">
+      <h2>Selected work</h2>
+
+      <div class="gallery-grid">
+        <figure>
+          <img src="images/japan/japan-hase-bell.jpg" alt="Temple bell at Hase-dera" />
+          <figcaption>Hase-dera — detail</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/japan/japan-hase-cherry.jpg" alt="Cherry blossoms at Hase-dera" />
+          <figcaption>Hase-dera in spring</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/japan/japan-hase-roof.jpg" alt="Roof detail at Hase-dera" />
+          <figcaption>Roofline study</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/japan/japan-himeji-cherry.jpg" alt="Himeji Castle with cherry blossoms" />
+          <figcaption>Himeji — contrast of scale</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/japan/japan-himeji-lines.jpg" alt="Architectural lines at Himeji Castle" />
+          <figcaption>Himeji — structure and line</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/japan/japan-mino.jpg" alt="Dragon statue at Minoo" />
+          <figcaption>Minoo — small shrine detail</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/japan/japan-mino-ayu.jpg" alt="Grilled ayu fish in Minoo" />
+          <figcaption>Minoo — roadside moment</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/japan/japan-mino-fountain.jpg" alt="Fountain dragon detail" />
+          <figcaption>Minoo — water and form</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/japan/japan-otagi-rakan.jpg" alt="Rakan statues at Otagi Nenbutsu-ji" />
+          <figcaption>Otagi Nenbutsu-ji — many voices</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/japan/japan-otagi-walkman.jpg" alt="Rakan statue with object" />
+          <figcaption>Otagi — one of many</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    kroppix.com — Japan
+  </footer>
+</body>
+</html>
