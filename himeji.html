@@ -11,11 +11,14 @@
       --muted: #6b675f;
       --line: #d9d2c7;
       --card: #efe9de;
+      --white: #ffffff;
       --max: 1180px;
-      --shadow: 0 6px 18px rgba(0,0,0,0.12);
+      --shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -31,14 +34,14 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
       background: rgba(247, 244, 238, 0.96);
       backdrop-filter: blur(6px);
       border-bottom: 1px solid var(--line);
@@ -62,61 +65,65 @@
 
     .nav-links {
       display: flex;
-      gap: 18px;
       flex-wrap: wrap;
+      gap: 18px;
       font-size: 0.95rem;
       color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
     }
 
     main {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 28px 24px 64px;
+      padding: 28px 24px 70px;
     }
 
     .hero {
-      margin-bottom: 48px;
+      margin-bottom: 56px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.25fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 28px;
       align-items: end;
     }
 
     .hero-image {
-      background: white;
+      background: var(--white);
       padding: 10px;
       box-shadow: var(--shadow);
     }
 
     .hero-copy h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 1.05;
+      margin: 0 0 12px;
+      font-size: clamp(2.1rem, 4vw, 3.6rem);
+      line-height: 1.04;
       font-weight: normal;
     }
 
     .hero-copy p {
-      margin: 0 0 10px;
+      margin: 0 0 12px;
       color: var(--muted);
-      max-width: 40ch;
+      max-width: 42ch;
     }
 
     .section {
-      margin-top: 56px;
+      margin-top: 60px;
     }
 
     .section-heading {
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--line);
     }
 
     .section-heading h2 {
       margin: 0 0 4px;
-      font-size: 1.7rem;
+      font-size: 1.75rem;
       font-weight: normal;
     }
 
@@ -134,7 +141,7 @@
 
     .card {
       grid-column: span 4;
-      background: white;
+      background: var(--white);
       padding: 10px;
       box-shadow: var(--shadow);
       cursor: pointer;
@@ -143,26 +150,22 @@
 
     .card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
     }
 
     .card img {
       width: 100%;
-      height: 260px;
+      height: 280px;
       object-fit: cover;
       background: #ddd;
-    }
-
-    .card.tall img {
-      height: 420px;
     }
 
     .card.wide {
       grid-column: span 6;
     }
 
-    .card.small {
-      grid-column: span 3;
+    .card.tall img {
+      height: 420px;
     }
 
     .caption {
@@ -176,13 +179,12 @@
 
     .caption-sub {
       display: block;
+      margin-top: 2px;
       font-size: 0.88rem;
       color: var(--muted);
-      margin-top: 2px;
     }
 
     .sequence {
-      margin-top: 18px;
       background: var(--card);
       border: 1px solid var(--line);
       padding: 18px;
@@ -206,24 +208,52 @@
       gap: 16px;
     }
 
-    .sequence .card {
+    .sequence-grid .card {
       grid-column: auto;
       padding: 8px;
-      margin: 0;
     }
 
-    .sequence .card img {
+    .sequence-grid .card img {
       height: 360px;
       object-fit: cover;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .details-grid .card {
+      grid-column: auto;
+      padding: 8px;
+    }
+
+    .details-grid .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .details-grid .caption {
+      padding: 8px 2px 2px;
+    }
+
+    .details-grid .caption-title {
+      font-size: 0.95rem;
+    }
+
+    .details-grid .caption-sub {
+      font-size: 0.84rem;
     }
 
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.88);
       display: none;
       align-items: center;
       justify-content: center;
+      background: rgba(0, 0, 0, 0.88);
       padding: 24px;
       z-index: 100;
     }
@@ -233,20 +263,20 @@
     }
 
     .lightbox-inner {
-      max-width: 1100px;
       width: 100%;
+      max-width: 1100px;
     }
 
     .lightbox img {
       max-height: 80vh;
       margin: 0 auto;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
     }
 
     .lightbox-caption {
+      margin-top: 14px;
       color: white;
       text-align: center;
-      margin-top: 14px;
       font-size: 0.95rem;
     }
 
@@ -258,8 +288,8 @@
       background: transparent;
       color: white;
       font-size: 2rem;
-      cursor: pointer;
       line-height: 1;
+      cursor: pointer;
     }
 
     footer {
@@ -276,8 +306,7 @@
       }
 
       .card,
-      .card.wide,
-      .card.small {
+      .card.wide {
         grid-column: span 6;
       }
 
@@ -285,15 +314,23 @@
         grid-template-columns: 1fr;
       }
 
-      .sequence .card img,
+      .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card img,
+      .sequence-grid .card img {
+        height: 300px;
+      }
+
       .card.tall img {
-        height: 320px;
+        height: 360px;
       }
     }
 
     @media (max-width: 620px) {
       main {
-        padding: 20px 16px 48px;
+        padding: 20px 16px 56px;
       }
 
       .nav {
@@ -301,14 +338,18 @@
       }
 
       .card,
-      .card.wide,
-      .card.small {
+      .card.wide {
         grid-column: span 12;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
       }
 
       .card img,
       .card.tall img,
-      .sequence .card img {
+      .sequence-grid .card img,
+      .details-grid .card img {
         height: auto;
       }
     }
@@ -340,8 +381,8 @@
         </div>
         <div class="hero-copy">
           <h1>Himeji Castle</h1>
-          <p>A return to Himeji across two seasons — winter architecture and spring blossom.</p>
-          <p>This album moves from broad castle views into rooflines, details, gardens, and the atmosphere around the grounds.</p>
+          <p>A visit across two seasons — winter architecture and spring blossom.</p>
+          <p>This set moves from broad castle views into rooflines, details, gardens, and the atmosphere around the grounds.</p>
         </div>
       </div>
     </section>
@@ -349,7 +390,7 @@
     <section class="section">
       <div class="section-heading">
         <h2>Winter</h2>
-        <p>Quiet, pale light and strong architectural lines.</p>
+        <p>Quiet, pale light and strong architectural form.</p>
       </div>
 
       <div class="gallery-grid">
@@ -365,7 +406,7 @@
           <img src="https://images.kroppix.com/japan/himeji/himeji-building-detail.jpg" alt="Wall and roof detail at Himeji Castle" loading="lazy" decoding="async" />
           <figcaption class="caption">
             <span class="caption-title">Building detail</span>
-            <span class="caption-sub">Texture, stone and tile</span>
+            <span class="caption-sub">Stone, plaster and tile</span>
           </figcaption>
         </figure>
 
@@ -373,7 +414,7 @@
           <img src="https://images.kroppix.com/japan/himeji/himeji-perspective.jpg" alt="Layered rooftops at Himeji Castle" loading="lazy" decoding="async" />
           <figcaption class="caption">
             <span class="caption-title">Perspective</span>
-            <span class="caption-sub">Rooflines stacking into the frame</span>
+            <span class="caption-sub">Rooflines stacking into view</span>
           </figcaption>
         </figure>
       </div>
@@ -382,12 +423,12 @@
     <section class="section">
       <div class="section-heading">
         <h2>Roof study sequence</h2>
-        <p>A three-image sequence moving from the wider form into ornament and detail.</p>
+        <p>A three-photo sequence moving from wider form into ornament and detail.</p>
       </div>
 
       <div class="sequence">
         <h3>From form to detail</h3>
-        <p>Read left to right: establish, move closer, finish on the cresting detail.</p>
+        <p>Read left to right: establish, move in, finish on the cresting detail.</p>
 
         <div class="sequence-grid">
           <figure class="card" data-full="https://images.kroppix.com/japan/himeji/himeji-roof-1.jpg" data-caption="Himeji roof study I">
@@ -453,31 +494,15 @@
     <section class="section">
       <div class="section-heading">
         <h2>Details & atmosphere</h2>
-        <p>Small observations around the castle grounds.</p>
+        <p>Smaller observations around the castle grounds.</p>
       </div>
 
-      <div class="gallery-grid">
-        <figure class="card small" data-full="https://images.kroppix.com/japan/himeji/himeji-bird.jpg" data-caption="Bird perched on rock at Himeji">
-          <img src="https://images.kroppix.com/japan/himeji/himeji-bird.jpg" alt="Bird perched on rock at Himeji" loading="lazy" decoding="async" />
-          <figcaption class="caption">
-            <span class="caption-title">Bird</span>
-            <span class="caption-sub">A small pause in the scene</span>
-          </figcaption>
-        </figure>
-
-        <figure class="card tall" data-full="https://images.kroppix.com/japan/himeji/himeji-hinge-detail.jpg" data-caption="Wooden door hinge detail at Himeji">
+      <div class="details-grid">
+        <figure class="card" data-full="https://images.kroppix.com/japan/himeji/himeji-hinge-detail.jpg" data-caption="Wooden door hinge detail at Himeji">
           <img src="https://images.kroppix.com/japan/himeji/himeji-hinge-detail.jpg" alt="Wooden door hinge detail at Himeji" loading="lazy" decoding="async" />
           <figcaption class="caption">
             <span class="caption-title">Hinge detail</span>
-            <span class="caption-sub">Weathered wood and ironwork</span>
-          </figcaption>
-        </figure>
-
-        <figure class="card small" data-full="https://images.kroppix.com/japan/himeji/himeji-koi.jpg" data-caption="Koi at Himeji">
-          <img src="https://images.kroppix.com/japan/himeji/himeji-koi.jpg" alt="Koi at Himeji" loading="lazy" decoding="async" />
-          <figcaption class="caption">
-            <span class="caption-title">Koi</span>
-            <span class="caption-sub">Soft colour in the water</span>
+            <span class="caption-sub">Wood and iron</span>
           </figcaption>
         </figure>
 
@@ -485,7 +510,23 @@
           <img src="https://images.kroppix.com/japan/himeji/himeji-roof-lines.jpg" alt="Roof lines at Himeji Castle" loading="lazy" decoding="async" />
           <figcaption class="caption">
             <span class="caption-title">Roof lines</span>
-            <span class="caption-sub">Repeating edges against the sky</span>
+            <span class="caption-sub">Repeating edges</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-full="https://images.kroppix.com/japan/himeji/himeji-koi.jpg" data-caption="Koi at Himeji">
+          <img src="https://images.kroppix.com/japan/himeji/himeji-koi.jpg" alt="Koi at Himeji" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Koi</span>
+            <span class="caption-sub">Soft colour in water</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-full="https://images.kroppix.com/japan/himeji/himeji-bird.jpg" data-caption="Bird perched on rock at Himeji">
+          <img src="https://images.kroppix.com/japan/himeji/himeji-bird.jpg" alt="Bird perched on rock at Himeji" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Bird</span>
+            <span class="caption-sub">Quiet pause</span>
           </figcaption>
         </figure>
       </div>
@@ -532,8 +573,11 @@
     }
 
     lightboxClose.addEventListener('click', closeLightbox);
+
     lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
     });
 
     document.addEventListener('keydown', (e) => {
