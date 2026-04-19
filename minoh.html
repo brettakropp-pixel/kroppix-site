@@ -1,46 +1,217 @@
-<!-- HERO + INTRO (keep your existing CSS) -->
-<section class="hero">
-  <div class="hero-grid">
-    <div class="hero-image">
-      <img
-        src="https://images.kroppix.com/japan/minoh/minoh-shrine.jpg"
-        alt="Shrine in Minoh, Osaka"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
-    <div class="hero-copy">
-      <h1>Minoh</h1>
-      <p>
-        Minoh. A valley where water, stone, and timber settle into a slower rhythm, and the path reveals itself in small, passing moments.
-      </p>
-      <p>
-        A walk through the quieter edge of Osaka, where the creek keeps moving and the city begins to loosen its grip. Less a destination than a gradual change in pace.
-      </p>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minoh | kroppix</title>
+
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --text: #1d1d1b;
+      --muted: #6b675f;
+      --line: #d9d2c7;
+      --card: #efe9de;
+      --white: #ffffff;
+      --max: 1180px;
+      --shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { display: block; max-width: 100%; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 244, 238, 0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand { font-size: 1.2rem; font-weight: bold; }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 24px 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 50px;
+    }
+
+    .hero-image {
+      background: white;
+      padding: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: normal;
+    }
+
+    .hero-copy p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      max-width: 42ch;
+    }
+
+    .body-copy {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      border-top: 1px solid var(--line);
+      padding-top: 25px;
+    }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    .section-heading {
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      grid-column: span 4;
+      background: white;
+      padding: 10px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+
+    .card.wide { grid-column: span 6; }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .card.tall img { height: 420px; }
+
+    .caption {
+      padding: 8px 2px;
+    }
+
+    .caption-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 40px 24px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .body-copy {
+        grid-template-columns: 1fr;
+      }
+      .card { grid-column: span 6; }
+    }
+
+    @media (max-width: 600px) {
+      .card { grid-column: span 12; }
+      .details-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">kroppix</a>
+    <nav class="nav-links">
+      <a href="japan.html">Japan</a>
+      <a href="arashiyama.html">Arashiyama</a>
+      <a href="tennoji.html">Tennoji</a>
+      <a href="himeji.html">Himeji</a>
+      <a href="yoshino-newyears.html">Yoshino</a>
+      <a href="minoh.html">Minoh</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero-grid">
+  <div class="hero-image">
+    <img src="https://images.kroppix.com/japan/minoh-shrine.jpg" />
+  </div>
+
+  <div class="hero-copy">
+    <h1>Minoh</h1>
+    <p>Minoh. A valley where water, stone, and timber settle into a slower rhythm, and the path reveals itself in small, passing moments.</p>
+    <p>A walk through the quieter edge of Osaka, where the creek keeps moving and the city begins to loosen its grip. Less a destination than a gradual change in pace.</p>
   </div>
 </section>
 
 <section class="body-copy">
   <div>
-    <p>
-      Minoh feels less like an arrival and more like a transition — concrete giving way to water, railings collecting leaves, the path narrowing into forest almost without announcement.
-    </p>
-    <p>
-      The creek runs through everything. Even when the walk fills with people, the place still feels shaped by stone, moss and timber more than by the crowd moving past it.
-    </p>
+    <p>Minoh feels less like an arrival and more like a transition — concrete giving way to water, railings collecting leaves, the path narrowing into forest almost without announcement.</p>
+    <p>The creek runs through everything, shaping the walk more than the people moving through it.</p>
   </div>
   <div>
-    <p>
-      Temples and shrines appear along the way, not separate from the landscape but folded into it. Small details hold longer than the wider view.
-    </p>
-    <p>
-      It’s the kind of place that rewards a slower look. Not dramatic, just quietly full of things worth noticing.
-    </p>
+    <p>Temples and shrines appear along the way, folded into the landscape rather than set apart.</p>
+    <p>It’s the kind of place that rewards a slower look. Not dramatic, just quietly full of things worth noticing.</p>
   </div>
 </section>
 
-<!-- MAIN GALLERY -->
+<!-- GALLERY -->
 <section class="section">
   <div class="section-heading">
     <h2>Along the creek</h2>
@@ -48,129 +219,61 @@
   </div>
 
   <div class="gallery-grid">
+    <div class="card tall">
+      <img src="https://images.kroppix.com/japan/minoh/minoh-autumn-leaves.jpg" />
+      <div class="caption">Autumn leaves<span class="caption-sub"> A quiet moment along the path</span></div>
+    </div>
 
-    <figure class="card tall"
-      data-full="https://images.kroppix.com/japan/minoh/minoh-autumn-leaves.jpg"
-      data-caption="A quiet stretch of handrail catching the season as it falls.">
-      <img src="https://images.kroppix.com/japan/minoh/minoh-autumn-leaves.jpg"
-        alt="Autumn leaves on railing in Minoh" />
-      <figcaption class="caption">
-        <span class="caption-title">Autumn leaves</span>
-        <span class="caption-sub">Colour gathering where people pass without noticing</span>
-      </figcaption>
-    </figure>
+    <div class="card tall">
+      <img src="https://images.kroppix.com/japan/minoh/minoh-creek-school-kids.jpg" />
+      <div class="caption">Creek and movement<span class="caption-sub"> A burst of colour through the valley</span></div>
+    </div>
 
-    <figure class="card tall"
-      data-full="https://images.kroppix.com/japan/minoh/minoh-creek-school-kids.jpg"
-      data-caption="School groups moving through the valley beside the creek.">
-      <img src="https://images.kroppix.com/japan/minoh/minoh-creek-school-kids.jpg"
-        alt="School children by the creek in Minoh" />
-      <figcaption class="caption">
-        <span class="caption-title">Creek and movement</span>
-        <span class="caption-sub">A sudden burst of noise and colour</span>
-      </figcaption>
-    </figure>
-
-    <figure class="card tall"
-      data-full="https://images.kroppix.com/japan/minoh/minoh-yamabushi.jpg"
-      data-caption="A line of white crossing the bridge in ritual dress.">
-      <img src="https://images.kroppix.com/japan/minoh/minoh-yamabushi.jpg"
-        alt="Yamabushi crossing bridge in Minoh" />
-      <figcaption class="caption">
-        <span class="caption-title">Yamabushi</span>
-        <span class="caption-sub">Ritual intersecting briefly with the landscape</span>
-      </figcaption>
-    </figure>
-
+    <div class="card tall">
+      <img src="https://images.kroppix.com/japan/minoh/minoh-yamabushi.jpg" />
+      <div class="caption">Yamabushi<span class="caption-sub"> Ritual crossing the landscape</span></div>
+    </div>
   </div>
 </section>
 
-<!-- TEMPLE / FOREST -->
 <section class="section">
   <div class="section-heading">
     <h2>Temple and forest</h2>
-    <p>Places where the path slows and the atmosphere shifts.</p>
   </div>
 
   <div class="gallery-grid">
+    <div class="card wide">
+      <img src="https://images.kroppix.com/japan/minoh/minoh-shrine.jpg" />
+    </div>
 
-    <figure class="card wide"
-      data-full="https://images.kroppix.com/japan/minoh/minoh-shrine.jpg"
-      data-caption="The shrine set back from the path, quiet and self-contained.">
-      <img src="https://images.kroppix.com/japan/minoh/minoh-shrine.jpg"
-        alt="Shrine in Minoh" />
-      <figcaption class="caption">
-        <span class="caption-title">Shrine</span>
-        <span class="caption-sub">Still and held within the forest</span>
-      </figcaption>
-    </figure>
+    <div class="card">
+      <img src="https://images.kroppix.com/japan/minoh/minoh-temple-rain.jpg" />
+    </div>
 
-    <figure class="card tall"
-      data-full="https://images.kroppix.com/japan/minoh/minoh-temple-rain.jpg"
-      data-caption="Rain pulling lanterns, wood and colour closer together.">
-      <img src="https://images.kroppix.com/japan/minoh/minoh-temple-rain.jpg"
-        alt="Temple in rain Minoh" />
-      <figcaption class="caption">
-        <span class="caption-title">Rain</span>
-        <span class="caption-sub">Muted light and softened edges</span>
-      </figcaption>
-    </figure>
-
-    <figure class="card tall"
-      data-full="https://images.kroppix.com/japan/minoh/minoh-mountain-tree.jpg"
-      data-caption="Bark, moss and light softening into texture.">
-      <img src="https://images.kroppix.com/japan/minoh/minoh-mountain-tree.jpg"
-        alt="Tree texture in Minoh forest" />
-      <figcaption class="caption">
-        <span class="caption-title">Forest detail</span>
-        <span class="caption-sub">More texture than scene</span>
-      </figcaption>
-    </figure>
-
+    <div class="card">
+      <img src="https://images.kroppix.com/japan/minoh/minoh-mountain-tree.jpg" />
+    </div>
   </div>
 </section>
 
-<!-- DETAILS -->
 <section class="section">
   <div class="section-heading">
-    <h2>Rooflines and detail</h2>
-    <p>Smaller observations where structure and ornament overlap.</p>
+    <h2>Detail</h2>
   </div>
 
   <div class="details-grid">
-
-    <figure class="card"
-      data-full="https://images.kroppix.com/japan/minoh/minoh-temple-roof.jpg"
-      data-caption="A roofline against open sky, simple and precise.">
-      <img src="https://images.kroppix.com/japan/minoh/minoh-temple-roof.jpg"
-        alt="Temple roof Minoh" />
-      <figcaption class="caption">
-        <span class="caption-title">Roofline</span>
-        <span class="caption-sub">Geometry against the sky</span>
-      </figcaption>
-    </figure>
-
-    <figure class="card"
-      data-full="https://images.kroppix.com/japan/minoh/minoh-temple-roof-ornament.jpg"
-      data-caption="Ornament holding the edge of the structure.">
-      <img src="https://images.kroppix.com/japan/minoh/minoh-temple-roof-ornament.jpg"
-        alt="Roof ornament Minoh" />
-      <figcaption class="caption">
-        <span class="caption-title">Ornament</span>
-        <span class="caption-sub">Detail carrying structure</span>
-      </figcaption>
-    </figure>
-
-    <figure class="card"
-      data-full="https://images.kroppix.com/japan/minoh/minoh-temple-roof-ornament-2.jpg"
-      data-caption="Guardian figures watching from the roofline.">
-      <img src="https://images.kroppix.com/japan/minoh/minoh-temple-roof-ornament-2.jpg"
-        alt="Roof guardian Minoh" />
-      <figcaption class="caption">
-        <span class="caption-title">Guardian</span>
-        <span class="caption-sub">Weight and presence above</span>
-      </figcaption>
-    </figure>
-
+    <div class="card"><img src="https://images.kroppix.com/japan/minoh/minoh-temple-roof.jpg" /></div>
+    <div class="card"><img src="https://images.kroppix.com/japan/minoh/minoh-temple-roof-ornament.jpg" /></div>
+    <div class="card"><img src="https://images.kroppix.com/japan/minoh/minoh-temple-roof-ornament-2.jpg" /></div>
+    <div class="card"><img src="https://images.kroppix.com/japan/minoh/minoh-mountain-tree.jpg" /></div>
   </div>
 </section>
+
+</main>
+
+<footer>
+  Minoh, Osaka.
+</footer>
+
+</body>
+</html>
