@@ -118,15 +118,21 @@
 
     .intro-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 36px;
       margin-top: 28px;
       padding-top: 24px;
       border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.98rem;
     }
 
     .intro-grid p {
-      margin: 0 0 18px;
+      margin: 0 0 14px;
+    }
+
+    .intro-grid p:last-child {
+      margin-bottom: 0;
     }
 
     .section {
@@ -302,9 +308,13 @@
 
     @media (max-width: 920px) {
       .hero-grid,
-      .intro-grid,
       .detail-layout {
         grid-template-columns: 1fr;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
       }
 
       .card,
@@ -341,6 +351,11 @@
 
       .nav {
         padding: 14px 16px;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
       }
 
       .card,
@@ -391,7 +406,7 @@
         </figure>
         <div class="hero-copy">
           <h1>Minoh</h1>
-          <p>Minoh. A valley where water, stone, and timber settle into a slower rhythm, and the path reveals itself in small, passing moments.</p>
+          <p>A valley where water, stone, and timber settle into a slower rhythm, and the path reveals itself in small, passing moments.</p>
           <p>A walk through the quieter edge of Osaka, where the creek keeps moving and the city begins to loosen its grip. Less a destination than a gradual change in pace.</p>
         </div>
       </div>
@@ -399,11 +414,11 @@
       <div class="intro-grid">
         <div>
           <p>Minoh feels less like a destination and more like a gradual shift — the city giving way to forest, concrete to water, noise to something softer.</p>
-          <p>The path follows the creek, but it’s the edges that hold your attention. Leaves collecting on railings, moss finding its way into timber, small details that don’t announce themselves.</p>
+          <p>The path follows the creek, but it's the edges that hold your attention. Leaves collecting on railings, moss finding its way into timber, small details that don't announce themselves.</p>
         </div>
         <div>
           <p>Temples and shrines appear along the way, not set apart but folded into the landscape. People pass through quietly — walking, pausing, moving on without much ceremony.</p>
-          <p>It’s the kind of place that doesn’t ask for your focus, but rewards it if you give it.</p>
+          <p>It's the kind of place that doesn't ask for your focus, but rewards it if you give it.</p>
         </div>
       </div>
     </section>
