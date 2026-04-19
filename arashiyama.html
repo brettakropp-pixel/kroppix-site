@@ -3,185 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>kroppix — Arashiyama</title>
-  <style>
-    :root {
-      --bg: #f7f4ee;
-      --text: #1d1d1b;
-      --muted: #6b675f;
-      --line: #d9d2c7;
-      --max: 1120px;
-    }
+  <title>Arashiyama | kroppix</title>
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    header {
-      border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-      background: rgba(247, 244, 238, 0.96);
-      backdrop-filter: blur(6px);
-      z-index: 10;
-    }
-
-    .nav {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      text-transform: lowercase;
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    main {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 40px 24px 88px;
-    }
-
-    .page-intro {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 40px;
-      align-items: start;
-      padding-bottom: 36px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .eyebrow {
-      margin: 0 0 10px;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      line-height: 0.96;
-      font-weight: 500;
-    }
-
-    .page-intro p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 42rem;
-    }
-
-    .hero {
-      margin-top: 36px;
-      display: grid;
-      gap: 14px;
-    }
-
-    .hero img {
-      width: 100%;
-      max-height: 78vh;
-      object-fit: cover;
-      border: 1px solid var(--line);
-    }
-
-    .caption {
-      font-size: 0.94rem;
-      color: var(--muted);
-      max-width: 50rem;
-    }
-
-    .story-grid {
-      margin-top: 54px;
-      display: grid;
-      gap: 22px;
-    }
-
-    .story-grid.two-up {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .story-grid.three-up {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .story-grid figure {
-      margin: 0;
-    }
-
-    .story-grid img {
-      width: 100%;
-      border: 1px solid var(--line);
-    }
-
-    .story-grid figcaption {
-      margin-top: 8px;
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .body-copy {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 36px;
-      margin-top: 46px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
-    }
-
-    .body-copy p {
-      margin: 0 0 16px;
-    }
-
-    footer {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 24px 36px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 900px) {
-      .page-intro,
-      .body-copy,
-      .story-grid.two-up,
-      .story-grid.three-up {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <!-- Use your existing shared styles -->
+  <!-- (same CSS as your newer pages) -->
 </head>
+
 <body>
   <header>
     <div class="nav">
@@ -191,110 +18,216 @@
         <a href="arashiyama.html">Arashiyama</a>
         <a href="tennoji.html">Tennoji</a>
         <a href="himeji.html">Himeji</a>
-        <a href="yoshino-newyears.html">Yoshino New Years</a>
+        <a href="yoshino-newyears.html">Yoshino</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-intro">
-      <div>
-        <p class="eyebrow">Japan — one day set</p>
-        <h1>Arashiyama</h1>
-      </div>
-      <div>
-        <p>
-          A single day gathered slowly: blossom, river, roofline, small shrine detail, and the quieter places just beyond the better-known paths.
-        </p>
-        <p>
-          This page works less like a guide and more like a sequence of observations — a place understood through fragments rather than a single view.
-        </p>
-      </div>
-    </section>
 
+    <!-- HERO -->
     <section class="hero">
-      <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-01.jpg" alt="Stone statue in Arashiyama" />
+      <img
+        loading="eager"
+        decoding="async"
+        src="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-01.jpg"
+        alt="Stone statue at Otagi Nenbutsu-ji in Arashiyama"
+      />
       <div class="caption">
-        Arashiyama. Early spring, a path opening under blossom and light.
+        Arashiyama. Among the hillside figures, each face holds its own expression — carved not by one hand, but many.
       </div>
     </section>
 
-    <section class="body-copy">
-      <div>
-        <p>
-  At Otagi Nenbutsu-ji, the hillside of stone figures carries a quieter history of recovery. 
-  After years of damage from floods, storms, and decline, the temple was restored in the 20th century under a sculptor-monk who invited ordinary people to carve the rakan themselves.
-</p>
+    <!-- INTRO -->
+    <section class="intro">
+      <h1>Arashiyama</h1>
+      <p>
+        A single day gathered slowly: blossom, river, roofline, and the quieter places just beyond the better-known paths.
+      </p>
+      <p>
+        This set moves through fragments — less a guide, more a sequence of small observations that build a sense of place.
+      </p>
+    </section>
+
+    <!-- STORY -->
+    <section class="section">
+      <div class="section-heading">
+        <h2>Otagi Nenbutsu-ji</h2>
+        <p>A hillside of carved figures, each one slightly different.</p>
       </div>
-      <div>
-        <p>
-  The result is a landscape of more than a thousand figures, each one slightly different — less a formal sculpture garden, and more a collection of individual expressions left behind in stone.
-</p>
+
+      <div class="gallery-grid">
+
+        <figure class="card wide"
+          data-full="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-01.jpg"
+          data-caption="Stone figures at Otagi Nenbutsu-ji">
+
+          <img src="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-01.jpg" alt="Stone figures at Otagi Nenbutsu-ji" loading="lazy" />
+          <figcaption class="caption">
+            <span class="caption-title">Hillside figures</span>
+            <span class="caption-sub">A collection of individual expressions</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card"
+          data-full="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-02.jpg"
+          data-caption="Stone figures grouped together">
+
+          <img src="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-02.jpg" alt="Grouped stone figures" loading="lazy" />
+          <figcaption class="caption">
+            <span class="caption-title">Grouped forms</span>
+            <span class="caption-sub">Many faces, one place</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card"
+          data-full="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-03.jpg"
+          data-caption="Individual carved statue">
+
+          <img src="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-03.jpg" alt="Individual statue" loading="lazy" />
+          <figcaption class="caption">
+            <span class="caption-title">Single figure</span>
+            <span class="caption-sub">A character held in stone</span>
+          </figcaption>
+        </figure>
+
       </div>
     </section>
 
-    <section class="story-grid two-up">
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-bell.jpg" alt="Temple bell detail in Arashiyama - bokeshi" />
-        <figcaption>Temple bell detail</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-bird-carving.jpg" alt="Bird carving in Arashiyama - entrance to a traditional tea house" />
-        <figcaption>Bird carving in Arashiyama - entrance to a traditional tea house</figcaption>
-      </figure>
+    <!-- DETAILS -->
+    <section class="section">
+      <div class="section-heading">
+        <h2>Details</h2>
+        <p>Smaller observations across the temple grounds.</p>
+      </div>
+
+      <div class="details-grid">
+
+        <figure class="card"
+          data-full="https://images.kroppix.com/japan/arashiyama/arashiyama-bell.jpg"
+          data-caption="Temple bell detail">
+
+          <img src="https://images.kroppix.com/japan/arashiyama/arashiyama-bell.jpg" alt="Temple bell detail" loading="lazy" />
+          <figcaption class="caption">
+            <span class="caption-title">Bell</span>
+            <span class="caption-sub">Metal and form</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card"
+          data-full="https://images.kroppix.com/japan/arashiyama/arashiyama-bird-carving.jpg"
+          data-caption="Bird carving detail">
+
+          <img src="https://images.kroppix.com/japan/arashiyama/arashiyama-bird-carving.jpg" alt="Bird carving" loading="lazy" />
+          <figcaption class="caption">
+            <span class="caption-title">Carving</span>
+            <span class="caption-sub">A smaller detail</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card"
+          data-full="https://images.kroppix.com/japan/arashiyama/arashiyama-temple.jpg"
+          data-caption="Temple roofline">
+
+          <img src="https://images.kroppix.com/japan/arashiyama/arashiyama-temple.jpg" alt="Temple roofline" loading="lazy" />
+          <figcaption class="caption">
+            <span class="caption-title">Roofline</span>
+            <span class="caption-sub">Line and ornament</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card"
+          data-full="https://images.kroppix.com/japan/arashiyama/arashiyama-roof-trad.jpg"
+          data-caption="Traditional roof detail">
+
+          <img src="https://images.kroppix.com/japan/arashiyama/arashiyama-roof-trad.jpg" alt="Traditional roof detail" loading="lazy" />
+          <figcaption class="caption">
+            <span class="caption-title">Roof detail</span>
+            <span class="caption-sub">Timber and tile</span>
+          </figcaption>
+        </figure>
+
+      </div>
     </section>
 
-    <section class="story-grid three-up">
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-blossom-01.jpg" alt="Cherry blossom with moon in Arashiyama" />
-        <figcaption>Blossom and sky</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-river.jpg" alt="Riverbank scene in Arashiyama" />
-        <figcaption>Along the river</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-river-blossom.jpg" alt="River and blossom in Arashiyama" />
-        <figcaption>River light</figcaption>
-      </figure>
+    <!-- LANDSCAPE -->
+    <section class="section">
+      <div class="section-heading">
+        <h2>River and blossom</h2>
+        <p>Moving out toward light, water and seasonal colour.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <figure class="card"
+          data-full="https://images.kroppix.com/japan/arashiyama/arashiyama-blossom-01.jpg"
+          data-caption="Cherry blossom and sky">
+
+          <img src="https://images.kroppix.com/japan/arashiyama/arashiyama-blossom-01.jpg" alt="Cherry blossom and sky" loading="lazy" />
+          <figcaption class="caption">
+            <span class="caption-title">Blossom</span>
+            <span class="caption-sub">Light and colour</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card"
+          data-full="https://images.kroppix.com/japan/arashiyama/arashiyama-river.jpg"
+          data-caption="Riverbank scene">
+
+          <img src="https://images.kroppix.com/japan/arashiyama/arashiyama-river.jpg" alt="Riverbank" loading="lazy" />
+          <figcaption class="caption">
+            <span class="caption-title">River</span>
+            <span class="caption-sub">Movement and space</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card"
+          data-full="https://images.kroppix.com/japan/arashiyama/arashiyama-river-blossom.jpg"
+          data-caption="River and blossom">
+
+          <img src="https://images.kroppix.com/japan/arashiyama/arashiyama-river-blossom.jpg" alt="River and blossom" loading="lazy" />
+          <figcaption class="caption">
+            <span class="caption-title">River light</span>
+            <span class="caption-sub">Seasonal shift</span>
+          </figcaption>
+        </figure>
+
+      </div>
     </section>
 
-    <section class="story-grid two-up">
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-blossom-03.jpg" alt="Cherry blossoms and walkway in Arashiyama" />
-        <figcaption>One expression among many</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-02.jpg" alt="Stone figures in Arashiyama" />
-        <figcaption>Grouped voices</figcaption>
-      </figure>
-    </section>
-
-    <section class="story-grid two-up">
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-03.jpg" alt="Stone statue holding an object in Arashiyama" />
-        <figcaption>A character held in stone</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-statue-04.jpg" alt="Cluster of stone figures in Arashiyama" />
-        <figcaption>Many faces, one place</figcaption>
-      </figure>
-    </section>
-
-    <section class="story-grid two-up">
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-temple.jpg" alt="Temple roofline in Arashiyama" />
-        <figcaption>Roofline and ornament</figcaption>
-      </figure>
-      <figure>
-        <img loading="lazy" decoding="async" src="https://images.kroppix.com/japan/arashiyama/arashiyama-roof-trad.jpg" alt="Traditional roof in Arashiyama" />
-        <figcaption>Traditional roof and hillside</figcaption>
-      </figure>
-    </section>
   </main>
 
   <footer>
-    kroppix.com — Arashiyama
+    Arashiyama, Kyoto.
   </footer>
+
+  <!-- LIGHTBOX (same as your other pages) -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <div class="lightbox-inner">
+      <img id="lightboxImage" src="" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card[data-full]');
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImage');
+    const cap = document.getElementById('lightboxCaption');
+
+    cards.forEach(c => {
+      c.onclick = () => {
+        img.src = c.dataset.full;
+        cap.textContent = c.dataset.caption;
+        lightbox.classList.add('open');
+      };
+    });
+
+    lightbox.onclick = e => {
+      if (e.target === lightbox) lightbox.classList.remove('open');
+    };
+  </script>
+
 </body>
 </html>
