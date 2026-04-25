@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Queensland East Coast — Road | kroppix</title>
+  <style>
+    :root {
+      --bg: #f3f0e8;
+      --text: #1f2522;
+      --muted: #6d7169;
+      --line: #d8d0c2;
+      --card: #e9e1d3;
+      --white: #ffffff;
+      --max: 1180px;
+      --shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(243, 240, 232, 0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 24px 70px;
+    }
+
+    .hero {
+      margin-bottom: 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: end;
+    }
+
+    .hero-image {
+      background: var(--white);
+      padding: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.1rem, 4vw, 3.6rem);
+      line-height: 1.04;
+      font-weight: normal;
+    }
+
+    .hero-copy p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      max-width: 42ch;
+    }
+
+    .route-strip {
+      margin-top: 22px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .route-strip span::after {
+      content: "→";
+      margin-left: 10px;
+      color: var(--line);
+    }
+
+    .route-strip span:last-child::after {
+      content: "";
+    }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    .section-heading {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading h2 {
+      margin: 0 0 4px;
+      font-size: 1.75rem;
+      font-weight: normal;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .route-stop {
+      margin-bottom: 18px;
+      padding: 16px 18px;
+      background: var(--card);
+      border-left: 4px solid var(--text);
+    }
+
+    .route-stop h3 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
+
+    .route-stop p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 70ch;
+    }
+
+    .stop-label {
+      margin: 0 0 4px;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      grid-column: span 4;
+      background: var(--white);
+      padding: 10px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .card.wide {
+      grid-column: span 6;
+    }
+
+    .card.tall img {
+      height: 420px;
+    }
+
+    .caption {
+      padding: 10px 4px 2px;
+    }
+
+    .caption-title {
+      display: block;
+      font-size: 0.98rem;
+    }
+
+    .caption-sub {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.88);
+      padding: 24px;
+      z-index: 100;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .lightbox img {
+      max-height: 80vh;
+      margin: 0 auto;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .lightbox-caption {
+      margin-top: 14px;
+      color: white;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 50px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card,
+      .card.wide {
+        grid-column: span 6;
+      }
+
+      .card img {
+        height: 300px;
+      }
+
+      .card.tall img {
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      main {
+        padding: 20px 16px 56px;
+      }
+
+      .nav {
+        padding: 14px 16px;
+      }
+
+      .card,
+      .card.wide {
+        grid-column: span 12;
+      }
+
+      .card img,
+      .card.tall img {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a href="index.html" class="brand">kroppix</a>
+      <nav class="nav-links">
+        <a href="road.html">Road</a>
+        <a href="japan.html">Japan</a>
+        <a href="night.html">Night</a>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-image">
+          <img
+            src="https://images.kroppix.com/road/qld-east-coast/bargara-drone-coastline.jpg"
+            alt="Aerial view of the coastline at Bargara"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div class="hero-copy">
+          <h1>Queensland East Coast</h1>
+          <p>A loose road journey from Bargara north through cane fields, ranges, island water and bright tropical coast.</p>
+          <p>This set is less about one place than the movement between them — the way the colour, weather and distance shift as the road heads north.</p>
+
+          <div class="route-strip">
+            <span>Bargara</span>
+            <span>Mackay</span>
+            <span>Eungella</span>
+            <span>Proserpine</span>
+            <span>Townsville</span>
+            <span>Magnetic Island</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <h2>First light on the coast</h2>
+        <p>The journey begins low and open, with the coastline already pulling north.</p>
+      </div>
+
+      <div class="route-stop">
+        <p class="stop-label">Stop 01</p>
+        <h3>Bargara</h3>
+        <p>Blue water, pale sand and the settled edge of the coast before the road stretches further north.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="card wide" data-full="https://images.kroppix.com/road/qld-east-coast/bargara-drone-coastline.jpg" data-caption="Bargara coastline from above">
+          <img src="https://images.kroppix.com/road/qld-east-coast/bargara-drone-coastline.jpg" alt="Aerial view of the Bargara coastline" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Bargara coastline</span>
+            <span class="caption-sub">The road starts beside clear water</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card wide" data-full="https://images.kroppix.com/road/qld-east-coast/mackay-sugarcane-sunset.jpg" data-caption="Sunset over sugarcane near Mackay">
+          <img src="https://images.kroppix.com/road/qld-east-coast/mackay-sugarcane-sunset.jpg" alt="Orange sunset over sugarcane near Mackay" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Cane sunset</span>
+            <span class="caption-sub">A warmer inland edge to the coast</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <h2>North through ranges and water</h2>
+        <p>The coast gives way to rainforest, rock pools and quieter inland places.</p>
+      </div>
+
+      <div class="route-stop">
+        <p class="stop-label">Stop 02</p>
+        <h3>Finch Hatton and Eungella</h3>
+        <p>A cooler shift in the trip — green valleys, running water and small moments of stillness.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="card wide" data-full="https://images.kroppix.com/road/qld-east-coast/finch-hatton-mountain-view.jpg" data-caption="View across the Finch Hatton ranges">
+          <img src="https://images.kroppix.com/road/qld-east-coast/finch-hatton-mountain-view.jpg" alt="Wide mountain view across Finch Hatton" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Finch Hatton range</span>
+            <span class="caption-sub">Cloud shadow over green country</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-full="https://images.kroppix.com/road/qld-east-coast/finch-hatton-gorge-waterfall.jpg" data-caption="Waterfall and rock pools at Finch Hatton Gorge">
+          <img src="https://images.kroppix.com/road/qld-east-coast/finch-hatton-gorge-waterfall.jpg" alt="Waterfall and rock pools at Finch Hatton Gorge" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Gorge water</span>
+            <span class="caption-sub">Rock, rainforest and running water</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-full="https://images.kroppix.com/road/qld-east-coast/eungella-nationalpark-platypus.jpg" data-caption="Quiet sign at Eungella National Park">
+          <img src="https://images.kroppix.com/road/qld-east-coast/eungella-nationalpark-platypus.jpg" alt="Quiet sign at Eungella National Park" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Shhhh</span>
+            <span class="caption-sub">A pause before the water</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card wide" data-full="https://images.kroppix.com/road/qld-east-coast/eungella-nationalpark-platypus-2.jpg" data-caption="Platypus swimming at Eungella National Park">
+          <img src="https://images.kroppix.com/road/qld-east-coast/eungella-nationalpark-platypus-2.jpg" alt="Platypus swimming at Eungella National Park" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Platypus</span>
+            <span class="caption-sub">A small movement on quiet water</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <h2>Open distance</h2>
+        <p>The landscape stretches out again, with mountains sitting low across water and haze.</p>
+      </div>
+
+      <div class="route-stop">
+        <p class="stop-label">Stop 03</p>
+        <h3>Lake Proserpine</h3>
+        <p>A stiller part of the road — less coastal brightness, more distance and weather.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="card wide" data-full="https://images.kroppix.com/road/qld-east-coast/lake-proserpine-bird-mountain.jpg" data-caption="Bird passing in front of a mountain at Lake Proserpine">
+          <img src="https://images.kroppix.com/road/qld-east-coast/lake-proserpine-bird-mountain.jpg" alt="Bird flying in front of a mountain at Lake Proserpine" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Lake Proserpine</span>
+            <span class="caption-sub">A bird crossing the mountain line</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <h2>Into the tropics</h2>
+        <p>The colour lifts again around Townsville — harder light, dry rock and bright blue water.</p>
+      </div>
+
+      <div class="route-stop">
+        <p class="stop-label">Stop 04</p>
+        <h3>Townsville</h3>
+        <p>A higher, brighter section of the trip where the coast starts to feel more tropical.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="card wide" data-full="https://images.kroppix.com/road/qld-east-coast/townsville-castle-rock-lookout.jpg" data-caption="Looking across Townsville from Castle Hill">
+          <img src="https://images.kroppix.com/road/qld-east-coast/townsville-castle-rock-lookout.jpg" alt="View across Townsville from Castle Hill lookout" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Castle Hill lookout</span>
+            <span class="caption-sub">Town and water under hard blue sky</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card" data-full="https://images.kroppix.com/road/qld-east-coast/townsville-palm-trees-bluesky.jpg" data-caption="Palm trees against a bright Townsville sky">
+          <img src="https://images.kroppix.com/road/qld-east-coast/townsville-palm-trees-bluesky.jpg" alt="Palm trees against a bright blue Townsville sky" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Palm sky</span>
+            <span class="caption-sub">Simple tropical geometry</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card tall" data-full="https://images.kroppix.com/road/qld-east-coast/townsville-tawnyfrogmouth-bird.jpg" data-caption="Tawny frogmouth in Townsville">
+          <img src="https://images.kroppix.com/road/qld-east-coast/townsville-tawnyfrogmouth-bird.jpg" alt="Tawny frogmouth perched in a tree in Townsville" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Tawny frogmouth</span>
+            <span class="caption-sub">Stillness hidden in the branches</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <h2>Island pause</h2>
+        <p>Magnetic Island slows the page down again — water, animals, and a longer look toward the horizon.</p>
+      </div>
+
+      <div class="route-stop">
+        <p class="stop-label">Stop 05</p>
+        <h3>Magnetic Island</h3>
+        <p>The road briefly leaves the road — across water, into heat, granite, wildlife and jetty lines.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="card wide" data-full="https://images.kroppix.com/road/qld-east-coast/magnetic-island-drone.jpg" data-caption="Magnetic Island from above">
+          <img src="https://images.kroppix.com/road/qld-east-coast/magnetic-island-drone.jpg" alt="Aerial view of Magnetic Island coastline and water" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Magnetic Island</span>
+            <span class="caption-sub">Granite, green hills and clear water</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card tall" data-full="https://images.kroppix.com/road/qld-east-coast/magnetic-island-wallaby.jpg" data-caption="Wallaby on Magnetic Island">
+          <img src="https://images.kroppix.com/road/qld-east-coast/magnetic-island-wallaby.jpg" alt="Wallaby sitting on rocks at Magnetic Island" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Wallaby</span>
+            <span class="caption-sub">A quiet island encounter</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card tall" data-full="https://images.kroppix.com/road/qld-east-coast/magnetic-island-jetty.jpg" data-caption="Jetty at Magnetic Island">
+          <img src="https://images.kroppix.com/road/qld-east-coast/magnetic-island-jetty.jpg" alt="Jetty leading out over blue water at Magnetic Island" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span class="caption-title">Jetty line</span>
+            <span class="caption-sub">A final line out into blue</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Queensland East Coast — Bargara to Magnetic Island.
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <div class="lightbox-inner">
+      <img id="lightboxImage" src="" alt="" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card[data-full]');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const full = card.getAttribute('data-full');
+        const caption = card.getAttribute('data-caption');
+        const img = card.querySelector('img');
+
+        lightboxImage.src = full;
+        lightboxImage.alt = img.alt || caption || '';
+        lightboxCaption.textContent = caption || '';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
